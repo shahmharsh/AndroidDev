@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comment"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:paddingBottom="5dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/editTextComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:gravity="top|start"
+        android:maxLines="5"
+        android:minWidth="200dp">
+        <requestFocus />
+    </EditText>
+
+    <Button android:id="@+id/dialogCommentSubmitButton"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"  android:focusable="false"
+        android:layout_margin="5dip" android:textColor="#FFF8C6"
+        android:textSize="20sp" android:layout_width="fill_parent" />
+
+</LinearLayout>
