@@ -11,6 +11,7 @@ public class Circle {
 
     public static final String TAG = "Circle";
     private final long REPEAT_DELAY = 50;
+    private static final float COEFFICIENT_OF_RESTITUTION = 0.9f;
 
     private Handler mIncreaseRadiusHandler = new Handler();
     private Handler mMoveCircleHandler = new Handler();
@@ -112,18 +113,18 @@ public class Circle {
 
                 if ((x + radius) >= screenWidth) {
                     x = screenWidth - radius;
-                    xVelocity = -1 * xVelocity;
+                    xVelocity = -1 * xVelocity * COEFFICIENT_OF_RESTITUTION;
                 } else if ((x - radius) <= 0) {
                     x = radius;
-                    xVelocity = -1 * xVelocity;
+                    xVelocity = -1 * xVelocity * COEFFICIENT_OF_RESTITUTION;
                 }
 
                 if ((y + radius) >= screenHeight) {
                     y = screenHeight - radius;
-                    yVelocity = -1 * yVelocity;
+                    yVelocity = -1 * yVelocity * COEFFICIENT_OF_RESTITUTION;
                 } else if ((y - radius) <= 0) {
                     y = radius;
-                    yVelocity = -1 * yVelocity;
+                    yVelocity = -1 * yVelocity * COEFFICIENT_OF_RESTITUTION;
                 }
 
                 view.postInvalidate();
